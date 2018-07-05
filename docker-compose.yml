@@ -3,7 +3,9 @@ version: '2'
 services:
   release-monitor:
     image: budry/release-monitor
-    build: .
+    build:
+      dockerfile: Dockerfile.development
+      context: ./
     command: "make run"
     volumes:
       - ./:/go/src/bitbucket.org/budry/release-monitor
