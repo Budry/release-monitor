@@ -23,7 +23,7 @@ func InitializeStore() {
 func UpdateStore(store Store) {
 	marshaled, jsonErr := json.Marshal(store)
 	errors.HandleError(jsonErr)
-	fileErr := ioutil.WriteFile(storeFile, marshaled, 0644)
+	fileErr := ioutil.WriteFile(storeFile, marshaled, 0666)
 	errors.HandleError(fileErr)
 }
 
