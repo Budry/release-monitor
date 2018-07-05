@@ -3,7 +3,10 @@ APP_NAME := release-monitor
 SOURCE_DIR := ./src
 ENTRYPOINT := main.go
 
-all: test build clean
+all: prepare test build clean
+
+prepare:
+	go get -v ./src
 
 run:
 	go run $(SOURCE_DIR)/main.go ${ARG}
