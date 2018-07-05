@@ -1,5 +1,7 @@
 # Release monitor
 
+**This package is not completed**
+
 Simple commandline app for watching releases a running tasks when is a new release published.
 
 ## Motivation
