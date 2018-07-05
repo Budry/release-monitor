@@ -4,7 +4,7 @@ Simple commandline app for wathing releases a running tasks when is a new releas
 
 ## Motivation
 
-From time to time I need to be notificated when some library/package/apps is updated to a new version. For example, I manage ARM build of docker/registry and I need hook for run automatic build when is official app is updated to a new version. Because GitHub doest not have any simple mechanism for that (has only atom feed but without any notifications) I create this simple app.
+From time to time I need to be notificated when some library/package/apps is updated to a new version. For example, I manage [ARM build of docker/registry](https://github.com/Budry/docker-registry-arm) and I need hook for run automatic build when is official app is updated to a new version. Because GitHub doest not have any simple mechanism for that (has only atom feed but without any notifications) I create this simple app.
 
 ## How to use it
 
