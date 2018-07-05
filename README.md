@@ -1,10 +1,10 @@
 # Release monitor
 
-Simple commandline app for wathing releases a running tasks when is a new release is published.
+Simple commandline app for watching releases a running tasks when is a new release published.
 
 ## Motivation
 
-From time to time I need to be notificated when some library/package/apps is updated to a new version. For example, I manage [ARM build of docker/registry](https://github.com/Budry/docker-registry-arm) and I need hook for run automatic build when is official app is updated to a new version. Because GitHub doest not have any simple mechanism for that (has only atom feed but without any notifications) I create this simple app.
+From time to time I need to be notificated when some library/package/apps is updated to a new version. For example, I manage [ARM build of docker/registry](https://github.com/Budry/docker-registry-arm) and I need hook for run automatic build when official app is updated to a new version. Because GitHub doest not have any simple mechanism for that (has only atom feed but without any notifications) I create this simple app.
 
 ## How to use it
 
@@ -17,7 +17,7 @@ docker run \
     budry/release-monitor
 ```
 
-Required is only the first volume, application need to have configuration file. The second volume is used for store last process release notification. When you dont use it and restart container application resend all notification from beginning.
+Required is only the first volume, application needs to have configuration file. The second volume is used for store last process release notification. When you don't use it and restart container application, resend all notification from beginning.
 
 ### Configuration file
 
@@ -49,8 +49,8 @@ This example send HTTP request with release info in json format to my CI server 
     * `monitors` - list of monitors
 * `monitor`
     * `name` - Your monitor name. Name is used for remember last processed release
-    * `url` - URL address to you package. Each service as GitHub, Bitbucket, GitLab has own adapter (actual is GitHub only)
-    * `commands` - list of strings. Each command is run and you can use %%RELEASE%% placeholder for insert release info. All commands are execute for each new release
+    * `url` - URL address to your package. Each service as GitHub, Bitbucket, GitLab has own adapter (currently is GitHub only)
+    * `commands` - list of strings. Each command will be run and you can use %%RELEASE%% placeholder for insert release info. All commands are execute for each new release
 
 #### Release info
 
