@@ -9,6 +9,7 @@ import (
 )
 
 type Configuration struct {
+	Interval string `json:"interval"`
 	Monitors []monitors.Monitor `json:"monitors"`
 }
 
