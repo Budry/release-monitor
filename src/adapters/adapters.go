@@ -2,6 +2,8 @@ package adapters
 
 import (
 	"net/url"
+
+	"bitbucket.org/budry/release-monitor/src/errors"
 )
 
 type Adapters struct {
@@ -10,8 +12,7 @@ type Adapters struct {
 
 func (adapters *Adapters) GetAdapter(monitorUrl string) Adapter {
 	parsedUrl, urlErr := url.Parse(monitorUrl)
-	if urlErr != nil {
-		panic(urlErr)
-	}
+	errors.HandleError(urlErr)
+
 	return adapters.Adapters[parsedUrl.Hostname()]
 }

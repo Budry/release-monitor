@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"bitbucket.org/budry/release-monitor/src/adapters"
+	"bitbucket.org/budry/release-monitor/src/errors"
 	"bitbucket.org/budry/release-monitor/src/monitors"
 	"bitbucket.org/budry/release-monitor/src/releases"
 	"bitbucket.org/budry/release-monitor/src/store"
@@ -21,7 +22,7 @@ func (provider *Provider) Process(monitors []monitors.Monitor) {
 	for _, monitor := range monitors {
 		adapter := provider.Adapters.GetAdapter(monitor.Url)
 		if adapter == nil {
-			panic("Missing adapter for monitor")
+			panic("Missing adapter for monitor '" + monitor.Name + "'")
 		}
 		releaseRecords := adapter.GetReleases(&monitor)
 		if len(releaseRecords) > 0 {
@@ -49,15 +50,11 @@ func (provider *Provider) Process(monitors []monitors.Monitor) {
 			if len(newReleases) > 0 {
 				for _, command := range monitor.Commands {
 					newReleasesString, jsonErr := json.Marshal(newReleases)
-					if jsonErr != nil {
-						panic(jsonErr)
-					}
+					errors.HandleError(jsonErr)
 
 					command = strings.Replace(command, "%%RELEASE%%", string(newReleasesString), -1)
 					out, err := exec.Command("sh", "-c", command).Output()
-					if err != nil {
-						panic(err)
-					}
+					errors.HandleError(err)
 					fmt.Printf("Command: %s", command)
 					fmt.Printf(" | Result: %s\n", out)
 				}

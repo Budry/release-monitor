@@ -5,6 +5,8 @@ import (
 	"io/ioutil"
 	"os"
 	"time"
+
+	"bitbucket.org/budry/release-monitor/src/errors"
 )
 
 type Store map[string]time.Time
@@ -14,36 +16,26 @@ const storeFile = "/var/lib/release-monitor/data.json"
 func InitializeStore() {
 	if _, err := os.Stat(storeFile); os.IsNotExist(err) {
 		fileErr := ioutil.WriteFile(storeFile, []byte("{}"), 0666)
-		if fileErr != nil {
-			panic(fileErr)
-		}
+		errors.HandleError(fileErr)
 	}
 }
 
 func UpdateStore(store Store) {
 	marshaled, jsonErr := json.Marshal(store)
-	if jsonErr != nil {
-		panic(jsonErr)
-	}
+	errors.HandleError(jsonErr)
 	fileErr := ioutil.WriteFile(storeFile, marshaled, 0644)
-	if fileErr != nil {
-		panic(fileErr)
-	}
+	errors.HandleError(fileErr)
 }
 
 func GetStore() *Store {
 	file, fileErr := os.Open(storeFile)
-	if fileErr != nil {
-		panic(fileErr)
-	}
+	errors.HandleError(fileErr)
 	defer file.Close()
 
 	decoder := json.NewDecoder(file)
 	var store *Store
 	jsonErr := decoder.Decode(&store)
-	if jsonErr != nil {
-		panic(jsonErr)
-	}
+	errors.HandleError(jsonErr)
 
 	return store
 }
