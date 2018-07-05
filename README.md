@@ -8,7 +8,7 @@ From time to time I need to be notificated when some library/package/apps is upd
 
 ## How to use it
 
-The best way how to use this app is as docker image.
+The best way how to use this app is [as docker image](https://hub.docker.com/r/budry/release-monitor/).
 
 ```shell
 docker run \
