@@ -49,15 +49,17 @@ func (provider *Provider) ProcessMonitor(monitor monitors.Monitor, wg *sync.Wait
 		store.UpdateStore(storedData)
 
 		if len(newReleases) > 0 {
-			for _, command := range monitor.Commands {
-				newReleasesString, jsonErr := json.Marshal(newReleases)
-				errors.HandleError(jsonErr)
+			for _, release := range newReleases {
+				for _, command := range monitor.Commands {
+					newReleaseString, jsonErr := json.Marshal(release)
+					errors.HandleError(jsonErr)
 
-				command = strings.Replace(command, "%%RELEASE%%", string(newReleasesString), -1)
-				out, err := exec.Command("sh", "-c", command).Output()
-				errors.HandleError(err)
-				fmt.Printf("Command: %s", command)
-				fmt.Printf(" | Result: %s\n", out)
+					command = strings.Replace(command, "%%RELEASE%%", string(newReleaseString), -1)
+					out, err := exec.Command("sh", "-c", command).Output()
+					errors.HandleError(err)
+					fmt.Printf("Command: %s", command)
+					fmt.Printf(" | Result: %s\n", out)
+				}
 			}
 		}
 	}
