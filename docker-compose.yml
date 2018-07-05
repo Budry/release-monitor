@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  release-monitor:
+    image: budry/release-monitor
+    build: .
+    volumes:
+      - .data/config.json:/etc/release-monitor/config.json
