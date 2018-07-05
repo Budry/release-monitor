@@ -11,11 +11,11 @@ type Configuration struct {
 	Monitors []monitors.Monitor `json:"monitors"`
 }
 
+const configFile = "/etc/release-monitor/config.json"
 var globalConfiguration *Configuration
 
 func GetGlobalConfiguration() *Configuration {
 	if globalConfiguration == nil {
-		var configFile = "/etc/release-monitor/config.json"
 		file, fileErr := os.Open(configFile)
 		if fileErr != nil {
 			panic(fileErr)
