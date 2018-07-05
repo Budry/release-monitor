@@ -13,9 +13,9 @@ import (
 )
 
 func run(provider *providers.Provider) {
-	fmt.Print("Start processing at " + time.Now().String())
+	fmt.Println("Start processing at " + time.Now().String())
 	provider.Process(config.GetGlobalConfiguration().Monitors)
-	fmt.Println(" Done at " + time.Now().String())
+	fmt.Println("Done at " + time.Now().String())
 }
 
 func main() {
