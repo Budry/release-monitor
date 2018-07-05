@@ -34,7 +34,6 @@ func (provider *Provider) Process(monitors []monitors.Monitor) {
 
 			var newReleases []releases.ReleaseRecord
 			if !exist {
-				fmt.Println("Missing", releaseRecords[0])
 				storedData[monitor.Name] = releaseRecords[0].Date
 				newReleases = append(newReleases, releaseRecords[0])
 			}
