@@ -8,11 +8,11 @@ import (
 	"strings"
 	"sync"
 
-	"bitbucket.org/budry/release-monitor/src/adapters"
-	"bitbucket.org/budry/release-monitor/src/errors"
-	"bitbucket.org/budry/release-monitor/src/monitors"
-	"bitbucket.org/budry/release-monitor/src/releases"
-	"bitbucket.org/budry/release-monitor/src/store"
+	"github.com/budry/release-monitor/src/adapters"
+	"github.com/budry/release-monitor/src/errors"
+	"github.com/budry/release-monitor/src/monitors"
+	"github.com/budry/release-monitor/src/releases"
+	"github.com/budry/release-monitor/src/store"
 )
 
 type Provider struct {

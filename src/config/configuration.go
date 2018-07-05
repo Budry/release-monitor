@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"os"
 
-	"bitbucket.org/budry/release-monitor/src/errors"
-	"bitbucket.org/budry/release-monitor/src/monitors"
+	"github.com/budry/release-monitor/src/errors"
+	"github.com/budry/release-monitor/src/monitors"
 )
 
 type Configuration struct {

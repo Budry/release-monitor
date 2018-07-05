@@ -3,7 +3,7 @@ package adapters
 import (
 	"net/url"
 
-	"bitbucket.org/budry/release-monitor/src/errors"
+	"github.com/budry/release-monitor/src/errors"
 )
 
 type Adapters struct {

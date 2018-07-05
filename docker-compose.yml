@@ -8,5 +8,5 @@ services:
       context: ./
     command: "make run"
     volumes:
-      - ./:/go/src/bitbucket.org/budry/release-monitor
+      - ./:/go/src/github.com/budry/release-monitor
       - .data/config.json:/etc/release-monitor/config.json

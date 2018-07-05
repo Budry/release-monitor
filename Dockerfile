@@ -2,7 +2,7 @@ FROM golang:alpine as builder
 
 RUN apk --no-cache --update add make git
 
-WORKDIR /go/src/bitbucket.org/budry/release-monitor
+WORKDIR /go/src/github.com/budry/release-monitor
 
 VOLUME /etc/release-monitor
 VOLUME /var/lib/release-monitor
@@ -21,5 +21,5 @@ CMD ["./dist/release-monitor"]
 FROM alpine
 
 WORKDIR /usr/local/bin
-COPY --from=builder /go/src/bitbucket.org/budry/release-monitor/dist/release-monitor /usr/local/bin/
+COPY --from=builder /go/src/github.com/budry/release-monitor/dist/release-monitor /usr/local/bin/
 CMD release-monitor

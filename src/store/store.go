@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"bitbucket.org/budry/release-monitor/src/errors"
+	"github.com/budry/release-monitor/src/errors"
 )
 
 type Store map[string]time.Time

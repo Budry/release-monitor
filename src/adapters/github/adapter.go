@@ -4,9 +4,9 @@ import (
 	"strings"
 	"time"
 
-	"bitbucket.org/budry/release-monitor/src/errors"
-	"bitbucket.org/budry/release-monitor/src/monitors"
-	"bitbucket.org/budry/release-monitor/src/releases"
+	"github.com/budry/release-monitor/src/errors"
+	"github.com/budry/release-monitor/src/monitors"
+	"github.com/budry/release-monitor/src/releases"
 	"github.com/mmcdole/gofeed"
 )
 

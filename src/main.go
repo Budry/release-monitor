@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"time"
 
-	"bitbucket.org/budry/release-monitor/src/adapters"
-	"bitbucket.org/budry/release-monitor/src/adapters/github"
-	"bitbucket.org/budry/release-monitor/src/config"
-	"bitbucket.org/budry/release-monitor/src/providers"
-	"bitbucket.org/budry/release-monitor/src/store"
+	"github.com/budry/release-monitor/src/adapters"
+	"github.com/budry/release-monitor/src/adapters/github"
+	"github.com/budry/release-monitor/src/config"
+	"github.com/budry/release-monitor/src/providers"
+	"github.com/budry/release-monitor/src/store"
 	"github.com/robfig/cron"
 )
 
