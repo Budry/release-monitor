@@ -1,5 +1,7 @@
 package errors
 
 func HandleError(err error) {
-	panic(err)
+	if err != nil {
+		panic(err)
+	}
 }
