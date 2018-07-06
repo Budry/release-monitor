@@ -64,3 +64,8 @@ Each release has simple format
     "date": "" 
 }
 ```
+
+## TODO
+
+[] Adapter for Bitbucket and GitLab
+[] Tests
