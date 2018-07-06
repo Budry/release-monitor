@@ -67,5 +67,5 @@ Each release has simple format
 
 ## TODO
 
-[] Adapter for Bitbucket and GitLab
-[] Tests
+[ ] Adapter for Bitbucket and GitLab
+[ ] Tests
