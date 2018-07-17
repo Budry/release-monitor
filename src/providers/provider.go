@@ -22,7 +22,7 @@ type Provider struct {
 func (provider *Provider) ProcessMonitor(monitor monitors.Monitor, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	adapter := provider.Adapters.GetAdapter(monitor.Url)
+	adapter := provider.Adapters.GetAdapter(monitor.Adapter)
 	if adapter == nil {
 		panic("Missing adapter for monitor '" + monitor.Name + "'")
 	}

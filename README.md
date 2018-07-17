@@ -34,6 +34,7 @@ Configuration file must have name `config.json` and must contain valid JSON. Fil
         {
             "name": "Docker registry",
             "url": "https://github.com/Budry/docker-registry-arm",
+            "adapter": "github",
             "commands": [
                 "curl --header \"Content-Type: application/json\" --request POST --data %%RELEASE%% <CI server endpoint>"
             ]
@@ -51,7 +52,8 @@ This example send HTTP request with release info in json format to my CI server 
     * `monitors` - list of monitors
 * `monitor`
     * `name` - Your monitor name. Name is used for remember last processed release
-    * `url` - URL address to your package. Each service as GitHub, Bitbucket, GitLab has own adapter (currently is GitHub only)
+    * `url` - Source URL address for feed
+    * `adapter` - Which adapter should be used for parse
     * `commands` - list of strings. Each command will be run and you can use %%RELEASE%% placeholder for insert release info. All commands are execute for each new release
 
 #### Release info
