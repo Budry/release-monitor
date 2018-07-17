@@ -2,7 +2,6 @@ package gitlab
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"time"
 
@@ -32,7 +31,6 @@ func (github *GitlabAdapter) GetReleases(monitor *monitors.Monitor) []releases.R
 	dec := json.NewDecoder(response.Body)
 	tags := GitlabTags{}
 	err = dec.Decode(&tags)
-	fmt.Println(tags)
 
 	var versions []releases.ReleaseRecord
 	for _, tag := range tags {
