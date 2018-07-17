@@ -70,5 +70,6 @@ Each release has simple format
 ## TODO
 
 - [ ] Custom dokcer images support
-- [ ] Adapter for Bitbucket and GitLab
+- [ ] Adapter for Bitbucket
+- [ ] Adapter for GitLab
 - [ ] Tests
