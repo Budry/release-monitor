@@ -31,6 +31,7 @@ func (github *GitlabAdapter) GetReleases(monitor *monitors.Monitor) []releases.R
 	dec := json.NewDecoder(response.Body)
 	tags := GitlabTags{}
 	err = dec.Decode(&tags)
+	errors.HandleError(err)
 
 	var versions []releases.ReleaseRecord
 	for _, tag := range tags {
