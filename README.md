@@ -71,5 +71,5 @@ Each release has simple format
 
 - [ ] Custom dokcer images support
 - [ ] Adapter for Bitbucket
-- [ ] Adapter for GitLab
+- [x] Adapter for GitLab
 - [ ] Tests

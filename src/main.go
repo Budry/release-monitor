@@ -6,6 +6,7 @@ import (
 
 	"github.com/budry/release-monitor/src/adapters"
 	"github.com/budry/release-monitor/src/adapters/github"
+	"github.com/budry/release-monitor/src/adapters/gitlab"
 	"github.com/budry/release-monitor/src/config"
 	"github.com/budry/release-monitor/src/providers"
 	"github.com/budry/release-monitor/src/store"
@@ -23,7 +24,8 @@ func main() {
 
 	adaptersStruct := adapters.Adapters{
 		Adapters: map[string]adapters.Adapter{
-			"github.com": &github.GithubAdapter{},
+			"github": &github.GithubAdapter{},
+			"gitlab": &gitlab.GitlabAdapter{},
 		},
 	}
 	provider := &providers.Provider{Adapters: adaptersStruct}
